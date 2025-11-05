@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hall Effect Sensor Status</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #101820;
+      color: #FEE715;
+      padding-top: 100px;
+    }
+    h1 {
+      color: #FEE715;
+    }
+    #status {
+      margin-top: 50px;
+      font-size: 2em;
+      padding: 20px;
+      border-radius: 10px;
+      display: inline-block;
+      background: #222;
+    }
+    .active {
+      background-color: #28a745;
+      color: white;
+    }
+    .inactive {
+      background-color: #dc3545;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hall Effect Sensor Monitoring</h1>
+  <div id="status" class="inactive">No Magnet</div>
+
+  <script>
+    // Simulated Example for Testing without Hardware
+    setInterval(() => {
+      let randomState = Math.random() > 0.5;
+      let statusBox = document.getElementById("status");
+      if (randomState) {
+        statusBox.innerText = "Magnet Detected";
+        statusBox.className = "active";
+      } else {
+        statusBox.innerText = "No Magnet";
+        statusBox.className = "inactive";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
